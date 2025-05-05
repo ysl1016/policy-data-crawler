@@ -4,7 +4,9 @@ A system for crawling and analyzing research reports from South Korean national 
 
 ## Features
 
-- Web crawling of national research institutions
+- Web crawling of national research institutions (KDI, BOK)
+- Real-time crawling and search via web interface
+- Search results are automatically saved to `search_results.csv`
 - PDF file download and text extraction
 - Text analysis and keyword extraction
 - Topic modeling
@@ -45,11 +47,13 @@ python main.py --build_index
 python main.py --generate_reports
 ```
 
-### Run web interface:
+### Run web interface (with real-time crawling and CSV export):
 ```bash
 python webapp.py
 ```
 Access http://localhost:5000 in your web browser
+
+- Enter a keyword and search: the system will crawl KDI and BOK in real time, display results, and save them to `search_results.csv` automatically.
 
 ## Notes
 
