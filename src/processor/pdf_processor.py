@@ -1,6 +1,5 @@
 import os
 import PyPDF2
-import textract
 import logging
 from tika import parser
 
@@ -58,16 +57,6 @@ class PDFProcessor:
             logging.error(f"Tika extraction error: {e}")
             return ""
     
-    def extract_text_textract(self, filepath):
-        """textract를 사용한 텍스트 추출 (다양한 형식 지원)"""
-        try:
-            text = textract.process(filepath)
-            return text.decode('utf-8')
-        
-        except Exception as e:
-            logging.error(f"Textract extraction error: {e}")
-            return ""
-    
     def extract_best_text(self, filepath):
         """여러 방법을 시도하여 최상의 텍스트 추출"""
         # 첫 번째 방법 시도
@@ -76,10 +65,6 @@ class PDFProcessor:
         # 결과가 불충분하면 다른 방법 시도
         if len(text.strip()) < 100:
             text = self.extract_text_tika(filepath)
-        
-        # 여전히 불충분하면 마지막 방법 시도
-        if len(text.strip()) < 100:
-            text = self.extract_text_textract(filepath)
         
         return text
     
