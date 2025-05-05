@@ -1,4 +1,4 @@
-# Policy Research Institution Data Crawler and Analysis System
+# Policy Research Institution: Data Crawler and Analysis System
 
 A system for crawling and analyzing research reports from South Korean national research institutions such as KDI (Korea Development Institute) and BOK (Bank of Korea).
 
