@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>국책연구기관 자료 검색</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">국책연구기관 자료 검색 시스템</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">검색</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/search" method="post">
+                            <div class="form-group">
+                                <label for="query">검색어:</label>
+                                <input type="text" class="form-control" id="query" name="query" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="start_date">시작일:</label>
+                                    <input type="date" class="form-control" id="start_date" name="start_date">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="end_date">종료일:</label>
+                                    <input type="date" class="form-control" id="end_date" name="end_date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="top_n">결과 수:</label>
+                                <select class="form-control" id="top_n" name="top_n">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">검색</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
